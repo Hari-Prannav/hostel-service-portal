@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Your backend URL
+  baseURL: 'https://hostel-service-portal-1.onrender.com/api', // Your backend URL
 });
 
 // This interceptor attaches the JWT token to every request automatically

@@ -19,7 +19,8 @@ app.use(helmet({
 const allowedOrigins = [
   'http://localhost:5173', // Your local React (Vite)
   'http://localhost:3000', // Traditional React
-  'https://your-frontend-link.vercel.app' // REPLACE THIS with your Vercel URL later
+  'https://your-frontend-link.vercel.app',// REPLACE THIS with your Vercel URL later
+  'https://hostel-service-portal-1.onrender.com' 
 ];
 app.use(cors({
   origin: (origin, callback) => {
