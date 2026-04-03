@@ -24,3 +24,16 @@ A full-stack MERN application designed to streamline hostel requests and authent
 1. **Clone the repo:**
    ```bash
    git clone [https://github.com/Hari-Prannav/hostel-service-portal.git](https://github.com/Hari-Prannav/hostel-service-portal.git)
+2. **Setup Backend:**
+   
+- Navigate to /hostel-service-backend
+
+- Create a .env file with MONGO_URI and JWT_SECRET
+
+- Run npm start then npm run dev
+
+3. **Setup Frontend:**
+
+- Navigate to /hostel-service-frontend
+
+- Run npm start then npm run dev
