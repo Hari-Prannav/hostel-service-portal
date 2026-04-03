@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+hostel-service-frontend/node_modules/
+hostel-service-backend/node_modules/
+
+# Local Environment Variables
+.env
+hostel-service-backend/.env
+hostel-service-frontend/.env
+
+# Build folders
+dist/
+build/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
