@@ -18,7 +18,7 @@ app.use(helmet({
 }));
 const allowedOrigins = [
   'https://hostel-service-portal.vercel.app',
-  'https://hostel-service-portal-e1ho8y37b-hari-prannavs-projects.vercel.app',
+  'https://hostel-service-portal-h5gyw11kg-hari-prannavs-projects.vercel.app',
   'http://localhost:3000' 
 ];
 app.use(cors({
