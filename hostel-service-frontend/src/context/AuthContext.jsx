@@ -1,42 +1,33 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
-// 1. Helper function to apply/remove token
-const setAuthToken = (token) => {
-  if (token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  } else {
-    delete axios.defaults.headers.common['Authorization'];
-  }
-};
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // 1. Added loading state
+
+  useEffect(() => {
     const savedUser = localStorage.getItem('userInfo');
     if (savedUser) {
-      const parsedUser = JSON.parse(savedUser);
-      // Attach saved token to Axios headers immediately on refresh!
-      setAuthToken(parsedUser.token);
-      return parsedUser;
+      setUser(JSON.parse(savedUser));
     }
-    return null;
-  });
+    setLoading(false); // 2. Set loading to false after checking storage
+  }, []);
 
   const login = (userData) => {
     localStorage.setItem('userInfo', JSON.stringify(userData));
-    // Set token for subsequent API calls
-    setAuthToken(userData.token);
     setUser(userData);
   };
 
   const logout = () => {
     localStorage.removeItem('userInfo');
-    setAuthToken(null);
     setUser(null);
+    // Optional: window.location.href = '/login'; // Force redirect on logout
   };
 
+  // 3. Include loading in the Provider value
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );
