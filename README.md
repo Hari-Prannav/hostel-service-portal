@@ -3,7 +3,7 @@
 A full-stack MERN application designed to streamline hostel requests and authentication for students and administrators.
 
 ## Live Demo
-- **Frontend (Vercel):** https://hostel-service-portal-e1ho8y37b-hari-prannavs-projects.vercel.app
+- **Frontend (Vercel):** https://hostel-service-portal-h5gyw11kg-hari-prannavs-projects.vercel.app
 - **Backend API (Render):** https://hostel-service-portal-1.onrender.com/
 
 ## Features
